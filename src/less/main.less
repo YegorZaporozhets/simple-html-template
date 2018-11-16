@@ -108,22 +108,35 @@ div {
   &__name {
     font-weight: bold;
     font-size: 3.3rem;
+    padding-bottom: 1.5rem;
   }
   &__consist {
     font-size: 1.5rem;
+    padding-bottom: 3rem;
   }
 
   &__price {
     font-size: 3.4rem;
     font-weight: bold;
     color: @red;
+    padding-bottom: 3.5rem;
 
   }
+
+  &__size {
+    padding-bottom: 4rem;
+  }
+
+  &__color {
+    padding-bottom: 4.5rem;
+  }
+
   &__size,
   &__color {
     font-size: 1.5rem;
     &>.wrap{
       display: flex;
+      margin-top: 1.5rem;
     }
   }
 }
@@ -180,6 +193,12 @@ div {
   font-size: 1.4rem;
   color: @gray;
   text-decoration: underline;
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+    &>img{
+      margin-right: 1rem;
+    }
 }
 
 .s-and-s,
@@ -205,7 +224,7 @@ div {
     }
 }
 .abt-cmpny{
-  margin-left: -11rem;
+  margin-left: -11rem;//media for 1600
 }
 
 footer {
@@ -217,7 +236,7 @@ footer {
   justify-content: space-between;
 }
 .features{
-  margin-left: -9rem;
+  margin-left: -9rem; //media for 1600
 }
 .features-item {
   margin-bottom: 2.5rem;
@@ -258,17 +277,34 @@ footer {
     }
 }
 
-input {
-  height: 1.2em;
+.footer {
+  padding-top: 6.5rem;
+  padding-bottom: 10.5rem;
+  margin-top: 12rem;
+  &__copyright {
+    padding-top: 3.5rem;
+    border-top: @border;
+    font-size: 1.2rem;
+    line-height: 2;
+  }
 }
 
-input[name="q"] {
-  padding-right: 1.8em;
+
+input[name="page-search"] {
+  padding-right: 1.8rem;
+  font-size: 1.8rem;
+  height: 3.6rem;
+  width: 28rem;
+  border: @border;
+    &:focus {
+      outline:none;
+    }
 }
 
 input[type="image"] {
-  width: 1.2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   position: relative;
-  left: -1.8rem;
+  left: -3.6rem;
   vertical-align: middle;
 }
