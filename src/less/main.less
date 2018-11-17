@@ -2,6 +2,12 @@
 @import (less) '_media.less';
 
 html {
+  @media @desktop-strict {
+    font-size: 8px;
+  }
+  @media @large-strict {
+    font-size: 9px;
+  }
   font-size: 10px;
 }
 
@@ -34,23 +40,22 @@ div {
   align-items: center;
   padding: 3rem 0 2.5rem 0;
 
+    &__oggetto {
+      position: absolute;
+      left: 50%;
+      margin-left:-2.5rem;
+      width: 5rem;
+      fill:#c00;
+    }
 
-  &__oggetto {
-    position: absolute;
-    left: 50%;
-    margin-left:-2.5rem;
-    width: 5rem;
-    fill:#c00;
-  }
+    &__logo {
+      width: 10.5rem;
+    }
 
-  &__logo {
-    width: 10.5rem;
-  }
-
-  &__phone-number {
-    color: @red;
-    font-size: 2.2rem;
-  }
+    &__phone-number {
+      color: @red;
+      font-size: 2.2rem;
+    }
 
 }
 
@@ -78,17 +83,38 @@ div {
       align-items: center;
       justify-content: space-between;
     }
+
+    &__search{
+      & input[name="page-search"] {
+        padding-right: 1.8rem;
+        font-size: 1.8rem;
+        height: 3.6rem;
+        width: 28rem;
+        border: @border;
+          &:focus {
+            outline:none;
+          }
+      }
+
+      & input[type="image"] {
+        width: 1.8rem;
+        height: 1.8rem;
+        position: relative;
+        left: -3.6rem;
+        vertical-align: middle;
+      }
+    }
 }
 
-.page-dir {
+.breadcrumbs {
   font-size: 1.4rem;
   padding-top: 4rem;
   padding-bottom: 2rem;
 
-  &__last {
-    text-decoration: none;
-    color: #000!important;
-  }
+    &__last {
+      text-decoration: none;
+      color: #000!important;
+    }
 
     & a {
       color: @red;
@@ -103,49 +129,49 @@ div {
   }
 }
 
-.discription {
+.description {
   max-width: 45.35%;
-  &__name {
-    font-weight: bold;
-    font-size: 3.3rem;
-    padding-bottom: 1.5rem;
-  }
-  &__consist {
-    font-size: 1.5rem;
-    padding-bottom: 3rem;
-  }
-
-  &__price {
-    font-size: 3.4rem;
-    font-weight: bold;
-    color: @red;
-    padding-bottom: 3.5rem;
-
-  }
-
-  &__size {
-    padding-bottom: 4rem;
-  }
-
-  &__color {
-    padding-bottom: 4.5rem;
-  }
-
-  &__size,
-  &__color {
-    font-size: 1.5rem;
-    &>.wrap{
-      display: flex;
-      margin-top: 1.5rem;
+    &__name {
+      font-weight: bold;
+      font-size: 3.3rem;
+      padding-bottom: 1.5rem;
     }
-  }
+
+    &__consist {
+      font-size: 1.5rem;
+      padding-bottom: 3rem;
+    }
+
+    &__price {
+      font-size: 3.4rem;
+      font-weight: bold;
+      color: @red;
+      padding-bottom: 3.5rem;
+    }
+
+    &__size {
+      padding-bottom: 4rem;
+    }
+
+    &__color {
+      padding-bottom: 4.5rem;
+    }
+
+    &__size,
+    &__color {
+      font-size: 1.5rem;
+      &>.wrap{
+        display: flex;
+        margin-top: 1.5rem;
+      }
+    }
 }
 
 .photo {
   width: 50%;
-  & img {
-    max-width: 100%;
-  }
+    & img {
+      max-width: 100%;
+    }
 }
 
 .size-block,
@@ -160,24 +186,27 @@ div {
   font-size: 3.6rem;
   border: 1px solid #000;
   margin-right: 1rem;
-  &_current{
-    border:2px solid @red;
-  }
+    &_current{
+      border:2px solid @red;
+    }
 }
 
 .color-block {
   &_white {
     background-color: #fff;
   }
+
   &_yellow {
     background-color:@yellow;
   }
+
   &_green {
     background-color: @green;
   }
+
 }
 
-.buy-but {
+.buy-button {
   cursor: pointer;
   display: table-cell;
   vertical-align: middle;
@@ -201,30 +230,32 @@ div {
     }
 }
 
-.s-and-s,
-.abt-cmpny {
-  // margin-right: 7.5rem;
+.service-and-support,
+.about-company {
   font-size:  1.4rem;
     &__title {
       font-weight: bold;
     }
+
     &__list {
       margin-top: 2rem;
       display: flex;
       font-size: 1.2rem;
 
-      &>ul {
-          columns: 2;
-          list-style-type: none;
-            &>li{
-              width: 18rem;
-              margin-bottom:  1rem;
-            }
-        }
+        &>ul {
+            columns: 2;
+            list-style-type: none;
+              &>li{
+                width: 18rem;
+                margin-bottom:  1rem;
+              }
+          }
     }
 }
-.abt-cmpny{
-  margin-left: -11rem;//media for 1600
+
+.about-company{
+  @media @xlarge { margin-left: -11rem;//media for 1600
+  }
 }
 
 footer {
@@ -236,41 +267,48 @@ footer {
   justify-content: space-between;
 }
 .features{
+  @media @xlarge {
   margin-left: -9rem; //media for 1600
-}
-.features-item {
-  margin-bottom: 2.5rem;
-  display: flex;
-  &__text {
-    margin-left: 1.5rem;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-  }
-  &__icon-delivery {
-    width: 4.6rem;
-    height: 2.4rem;
-  }
-  &__icon-like {
-    width: 2.8rem;
-    height: 2.4rem;
-    margin-left: 1.8rem;
-  }
-  &__icon-cup {
-    width: 2.2rem;
-    height: 2.4rem;
-    margin-left: 2.4rem;
   }
 }
 
+.features-item {
+  margin-bottom: 2.5rem;
+  display: flex;
+    &__text {
+      margin-left: 1.5rem;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &__icon-delivery {
+      width: 4.6rem;
+      height: 2.4rem;
+    }
+
+    &__icon-like {
+      width: 2.8rem;
+      height: 2.4rem;
+      margin-left: 1.8rem;
+    }
+
+    &__icon-cup {
+      width: 2.2rem;
+      height: 2.4rem;
+      margin-left: 2.4rem;
+    }
+}
+
 .follow {
-    &__fb{
+    &__facebook{
       width: 1.6rem;
       margin-left: 0.5rem;
       margin-bottom: 2.2rem;
     }
-    &__twtr,
-    &__inst {
+
+    &__twitter,
+    &__instagram {
       margin-bottom: 2.2rem;
       height: 3rem;
       width:  3rem;
@@ -281,30 +319,10 @@ footer {
   padding-top: 6.5rem;
   padding-bottom: 10.5rem;
   margin-top: 12rem;
-  &__copyright {
-    padding-top: 3.5rem;
-    border-top: @border;
-    font-size: 1.2rem;
-    line-height: 2;
-  }
-}
-
-
-input[name="page-search"] {
-  padding-right: 1.8rem;
-  font-size: 1.8rem;
-  height: 3.6rem;
-  width: 28rem;
-  border: @border;
-    &:focus {
-      outline:none;
+    &__copyright {
+      padding-top: 3.5rem;
+      border-top: @border;
+      font-size: 1.2rem;
+      line-height: 2;
     }
-}
-
-input[type="image"] {
-  width: 1.8rem;
-  height: 1.8rem;
-  position: relative;
-  left: -3.6rem;
-  vertical-align: middle;
 }
