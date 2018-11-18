@@ -1,20 +1,6 @@
 @import (less) '../../node_modules/normalize.css/normalize.css';
 @import (less) '_media.less';
 
-html {
-  @media @desktop-strict {
-    font-size: 8px;
-  }
-  @media @large-strict {
-    font-size: 9px;
-  }
-  font-size: 10px;
-}
-
-div {
-  box-sizing: border-box;
-}
-
 @roboto:'Roboto', sans-serif;
 @red:#c00;
 @border:1px solid #d9d9d4;
@@ -22,6 +8,38 @@ div {
 @yellow: #e2da53;
 @green:#a4ae96;
 @gray:#989898;
+
+html {
+  @media @phone-strict {
+    font-size: 8px;
+  }
+
+  @media @tablet-strict {
+    font-size: 14px;
+  }
+
+  @media @desktop-strict {
+    font-size: 8px;
+  }
+
+  @media @large-strict {
+    font-size: 9px;
+  }
+
+  @media @xlarge-strict {
+    font-size: 10px;
+  }
+
+  @media @ularge {
+    font-size: 11px;
+  }
+
+}
+
+div {
+  box-sizing: border-box;
+}
+
 * {
   font-family: @roboto;
   margin: 0;
@@ -41,11 +59,17 @@ div {
   padding: 3rem 0 2.5rem 0;
 
     &__oggetto {
+      @media @phone-strict, @tablet-strict {
+        display: none;
+        visibility: hidden;
+      }
+      @media @desktop {
       position: absolute;
       left: 50%;
       margin-left:-2.5rem;
       width: 5rem;
       fill:#c00;
+      }
     }
 
     &__logo {
@@ -54,12 +78,15 @@ div {
 
     &__phone-number {
       color: @red;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
     }
 
 }
 
 .menu {
+  @media @tablet-strict, @phone-strict {
+    align-self: center;
+  }
   border-top:@border;
   border-bottom:@border;
   background-color: @insideColor;
@@ -72,7 +99,7 @@ div {
     &__list ul>li{
       font-size: 1.6rem;
       display: inline;
-      margin-right: 1.4rem;
+      margin-right: 1.8rem;
       color: @red;
       border-bottom: 1px solid @red;
     }
@@ -81,10 +108,19 @@ div {
       height: 5.1rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      @media @tablet-strict, @phone-strict {
+        justify-content: center;
+      }
+      @media @desktop {
+        justify-content: space-between;
+      }
     }
 
     &__search{
+      @media @tablet-strict, @phone-strict {
+        display: none;
+        visibility: hidden;
+      }
       & input[name="page-search"] {
         padding-right: 1.8rem;
         font-size: 1.8rem;
@@ -107,9 +143,9 @@ div {
 }
 
 .breadcrumbs {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.8rem;
 
     &__last {
       text-decoration: none;
@@ -124,42 +160,71 @@ div {
 .content {
   &>.container {
     display: flex;
-    justify-content: space-between;
-
+    @media @tablet-strict, @phone-strict {
+      flex-direction: column;
+    }
+    @media @desktop {
+      justify-content: space-between;
+    }
   }
 }
 
 .description {
-  max-width: 45.35%;
+  @media @tablet-strict, @phone-strict {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  @media @desktop {
+    max-width: 45.35%;
+  }
     &__name {
+      @media @tablet-strict, @phone-strict {
+        order: 1;
+      }
       font-weight: bold;
-      font-size: 3.3rem;
-      padding-bottom: 1.5rem;
+      font-size: 3.65rem;
+      padding-bottom: 1.2rem;
     }
 
     &__consist {
-      font-size: 1.5rem;
-      padding-bottom: 3rem;
+      @media @tablet-strict, @phone-strict {
+        order: 4;
+      }
+      font-size: 1.6rem;
+      padding-bottom: 2.8rem;
     }
 
     &__price {
-      font-size: 3.4rem;
+      @media @phone-strict {
+        align-self: center;
+      }
+      @media @tablet-strict, @phone-strict {
+        order: 5;
+      }
+      font-size: 3.6rem;
       font-weight: bold;
       color: @red;
-      padding-bottom: 3.5rem;
+      padding-bottom: 2.4rem;
     }
 
     &__size {
-      padding-bottom: 4rem;
+      @media @tablet-strict, @phone-strict {
+        order: 3;
+      }
+      padding-bottom: 3.6rem;
     }
 
     &__color {
-      padding-bottom: 4.5rem;
+      @media @tablet-strict, @phone-strict {
+        order: 2;
+      }
+      padding-bottom: 4rem;
     }
 
     &__size,
     &__color {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       &>.wrap{
         display: flex;
         margin-top: 1.5rem;
@@ -168,7 +233,12 @@ div {
 }
 
 .photo {
-  width: 50%;
+  @media @tablet-strict, @phone-strict {
+    max-width: 100%;
+  }
+  @media @desktop {
+    width: 50%;
+  }
     & img {
       max-width: 100%;
     }
@@ -207,6 +277,13 @@ div {
 }
 
 .buy-button {
+  @media @tablet-strict, @phone-strict {
+    order: 6;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   cursor: pointer;
   display: table-cell;
   vertical-align: middle;
@@ -215,11 +292,15 @@ div {
   height: 8rem;
   color: #fff;
   background-color: @red;
-  font-size: 2.6rem;
+  font-size: 3rem;
 }
 
 .buy-late {
-  font-size: 1.4rem;
+  @media @tablet-strict, @phone-strict {
+    order: 7;
+    align-self: center;
+  }
+  font-size: 1.6rem;
   color: @gray;
   text-decoration: underline;
   padding-top: 4rem;
@@ -227,12 +308,13 @@ div {
   align-items: center;
     &>img{
       margin-right: 1rem;
+      width: 2.5rem;
     }
 }
 
 .service-and-support,
 .about-company {
-  font-size:  1.4rem;
+  font-size:  1.6rem;
     &__title {
       font-weight: bold;
     }
@@ -240,21 +322,28 @@ div {
     &__list {
       margin-top: 2rem;
       display: flex;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
 
         &>ul {
             columns: 2;
             list-style-type: none;
               &>li{
-                width: 18rem;
                 margin-bottom:  1rem;
               }
           }
     }
 }
 
+.about-company__list>ul>li {
+  @media @xlarge-strict { width: 18rem;
+  }
+}
+
 .about-company{
-  @media @xlarge { margin-left: -11rem;//media for 1600
+  @media @tablet-strict, @phone-strict {
+    margin-top: 3rem;
+  }
+  @media @xlarge { margin-left: -11rem;
   }
 }
 
@@ -264,11 +353,23 @@ footer {
 
 .footing {
   display: flex;
-  justify-content: space-between;
+  @media @tablet-strict, @phone-strict {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 5rem;
+  }
+  @media @desktop {
+    justify-content: space-between;
+    padding-bottom: 3rem;
+  }
 }
 .features{
+  @media @tablet-strict, @phone-strict {
+    order: -2;
+    align-self:  center;
+  }
   @media @xlarge {
-  margin-left: -9rem; //media for 1600
+  margin-left: -9rem;
   }
 }
 
@@ -277,7 +378,7 @@ footer {
   display: flex;
     &__text {
       margin-left: 1.5rem;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       display: flex;
       align-items: center;
     }
@@ -301,6 +402,13 @@ footer {
 }
 
 .follow {
+  @media @tablet-strict, @phone-strict {
+    display: flex;
+    justify-content: space-around;
+    order: -1;
+    margin: 2rem 0 2rem 0;
+
+  }
     &__facebook{
       width: 1.6rem;
       margin-left: 0.5rem;
@@ -316,13 +424,20 @@ footer {
 }
 
 .footer {
-  padding-top: 6.5rem;
-  padding-bottom: 10.5rem;
+  @media @tablet-strict, @phone-strict {
+    padding-top: 5rem;
+    margin-top: 5rem;
+  }
+  @media @desktop {
+    padding-top: 6.5rem;
+    padding-bottom: 10.5rem;
+  }
+
   margin-top: 12rem;
     &__copyright {
-      padding-top: 3.5rem;
+      padding-top: 2.8rem;
       border-top: @border;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       line-height: 2;
     }
 }
