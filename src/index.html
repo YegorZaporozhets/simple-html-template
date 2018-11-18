@@ -54,7 +54,7 @@
     <div class="content">
       <div class="container">
         <div class="photo">
-          <img src="img/tshirts/tshirt_white.jpg" alt="Tshirt">
+          <img id="getIt" src="img/tshirts/tshirt_white.jpg" alt="Tshirt">
         </div>
         <div class="description">
           <div class="description__name">
@@ -77,9 +77,9 @@
           <div class="description__color">
             Цвет:
             <div class="wrap">
-              <div class="color-block color-block_white color-block_current"></div>
-              <div class="color-block color-block_yellow"></div>
-              <div class="color-block color-block_green"></div>
+              <div onclick="tshirtColor('white')" class="color-block color-block_white color-block_current"></div>
+              <div onclick="tshirtColor('yellow')" class="color-block color-block_yellow"></div>
+              <div onclick="tshirtColor('green')" class="color-block color-block_green"></div>
             </div>
           </div>
           <div class="buy-button">
