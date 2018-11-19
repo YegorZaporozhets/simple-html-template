@@ -8,6 +8,9 @@
 @yellow: #e2da53;
 @green:#a4ae96;
 @gray:#989898;
+@twitterColor:#1da1f2;
+@facebookColor:#3b5998;
+@instagramColor:#c13584;
 
 html {
   @media @phone-strict {
@@ -34,6 +37,11 @@ html {
     font-size: 11px;
   }
 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 div {
@@ -68,7 +76,9 @@ div {
       left: 50%;
       margin-left:-2.5rem;
       width: 5rem;
-      fill:#c00;
+        & svg {
+          fill:#c00;
+        }
       }
     }
 
@@ -123,6 +133,7 @@ div {
       }
       & input[name="page-search"] {
         padding-right: 1.8rem;
+        padding-left: 1rem;
         font-size: 1.8rem;
         height: 3.6rem;
         width: 28rem;
@@ -148,12 +159,13 @@ div {
   padding-bottom: 1.8rem;
 
     &__last {
-      text-decoration: none;
+      text-decoration: none!important;
       color: #000!important;
     }
 
     & a {
       color: @red;
+      text-decoration:underline;
     }
 }
 
@@ -296,6 +308,7 @@ div {
 }
 
 .buy-late {
+  cursor: pointer;
   @media @tablet-strict, @phone-strict {
     order: 7;
     align-self: center;
@@ -303,7 +316,7 @@ div {
   font-size: 1.6rem;
   color: @gray;
   text-decoration: underline;
-  padding-top: 4rem;
+  margin-top: 4rem;
   display: flex;
   align-items: center;
     &>img{
@@ -410,13 +423,26 @@ footer {
 
   }
     &__facebook{
+      cursor: pointer;
       width: 1.6rem;
       margin-left: 0.5rem;
       margin-bottom: 2.2rem;
+        & svg:hover {
+          fill: @facebookColor;
+        }
+    }
+
+    &__twitter svg:hover {
+      fill:@twitterColor;
+    }
+
+    &__instagram svg:hover {
+      fill:@instagramColor;
     }
 
     &__twitter,
     &__instagram {
+      cursor: pointer;
       margin-bottom: 2.2rem;
       height: 3rem;
       width:  3rem;
