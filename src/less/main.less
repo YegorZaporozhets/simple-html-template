@@ -13,6 +13,10 @@
 @instagramColor:#c13584;
 
 html {
+  @media @calculator {
+    font-size: 6px;
+  }
+
   @media @phone-strict {
     font-size: 8px;
   }
@@ -67,7 +71,7 @@ div {
   padding: 3rem 0 2.5rem 0;
 
     &__oggetto {
-      @media @phone-strict, @tablet-strict {
+      @media @calculator, @phone-strict, @tablet-strict {
         display: none;
         visibility: hidden;
       }
@@ -94,7 +98,7 @@ div {
 }
 
 .menu {
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     align-self: center;
   }
   border-top:@border;
@@ -118,7 +122,7 @@ div {
       height: 5.1rem;
       display: flex;
       align-items: center;
-      @media @tablet-strict, @phone-strict {
+      @media @tablet-strict, @phone-strict, @calculator {
         justify-content: center;
       }
       @media @desktop {
@@ -127,7 +131,7 @@ div {
     }
 
     &__search{
-      @media @tablet-strict, @phone-strict {
+      @media @tablet-strict, @phone-strict, @calculator {
         display: none;
         visibility: hidden;
       }
@@ -172,7 +176,7 @@ div {
 .content {
   &>.container {
     display: flex;
-    @media @tablet-strict, @phone-strict {
+    @media @tablet-strict, @phone-strict, @calculator {
       flex-direction: column;
     }
     @media @desktop {
@@ -182,7 +186,7 @@ div {
 }
 
 .description {
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -191,7 +195,7 @@ div {
     max-width: 45.35%;
   }
     &__name {
-      @media @tablet-strict, @phone-strict {
+      @media @tablet-strict, @phone-strict, @calculator {
         order: 1;
       }
       font-weight: bold;
@@ -200,7 +204,7 @@ div {
     }
 
     &__consist {
-      @media @tablet-strict, @phone-strict {
+      @media @tablet-strict, @phone-strict, @calculator {
         order: 4;
       }
       font-size: 1.6rem;
@@ -208,10 +212,10 @@ div {
     }
 
     &__price {
-      @media @phone-strict {
+      @media @phone-strict, @calculator {
         align-self: center;
       }
-      @media @tablet-strict, @phone-strict {
+      @media @tablet-strict, @phone-strict, @calculator {
         order: 5;
       }
       font-size: 3.6rem;
@@ -221,14 +225,14 @@ div {
     }
 
     &__size {
-      @media @tablet-strict, @phone-strict {
+      @media @tablet-strict, @phone-strict, @calculator {
         order: 3;
       }
       padding-bottom: 3.6rem;
     }
 
     &__color {
-      @media @tablet-strict, @phone-strict {
+      @media @tablet-strict, @phone-strict, @calculator {
         order: 2;
       }
       padding-bottom: 4rem;
@@ -245,7 +249,7 @@ div {
 }
 
 .photo {
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     max-width: 100%;
   }
   @media @desktop {
@@ -289,7 +293,7 @@ div {
 }
 
 .buy-button {
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     order: 6;
     align-self: center;
     display: flex;
@@ -309,7 +313,7 @@ div {
 
 .buy-late {
   cursor: pointer;
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     order: 7;
     align-self: center;
   }
@@ -353,7 +357,7 @@ div {
 }
 
 .about-company{
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     margin-top: 3rem;
   }
   @media @xlarge { margin-left: -11rem;
@@ -366,7 +370,7 @@ footer {
 
 .footing {
   display: flex;
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     flex-direction: column;
     justify-content: center;
     padding-bottom: 5rem;
@@ -377,7 +381,7 @@ footer {
   }
 }
 .features{
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     order: -2;
     align-self:  center;
   }
@@ -415,7 +419,7 @@ footer {
 }
 
 .follow {
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     display: flex;
     justify-content: space-around;
     order: -1;
@@ -450,7 +454,7 @@ footer {
 }
 
 .footer {
-  @media @tablet-strict, @phone-strict {
+  @media @tablet-strict, @phone-strict, @calculator {
     padding-top: 5rem;
     margin-top: 5rem;
   }
